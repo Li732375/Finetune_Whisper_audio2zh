@@ -1,4 +1,4 @@
-# 需自行準備資料檔，音訊檔儲存的資料夾。通常資料檔就直接在資料夾下與資料共存
+# 需自行準備撰寫完成的資料檔 (metadata.csv) 與音訊檔儲存的資料夾，並且通常資料檔 (metadata.csv) 就直接在資料夾下與音訊檔共存。
 
 import os
 import shutil
@@ -16,17 +16,12 @@ if not os.path.exists(data_file_path):
     
 output_folder_path = input("請輸入音訊檔儲存的資料夾路徑：")
 
-# 確認資料檔路徑存在
-if not os.path.exists(data_file_path):
-    print(f"資料檔路徑 '{data_file_path}' 不存在。")
-    os.system("pause")
-    exit()
-
 # 確認音訊檔儲存的資料夾路徑存在
 if not os.path.exists(output_folder_path):
     print(f"音訊檔儲存的資料夾 '{output_folder_path} '不存在。")
     os.system("pause")
     exit()
+    
 
 # 定義函數，用於處理每一筆資料
 def process_data(data, other):

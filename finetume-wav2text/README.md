@@ -1,12 +1,4 @@
 # 如何產生自己的音訊資料集
-- [事前準備](https://github.com/Li732375/Finetune_Whisper_audio2zh/edit/master/finetume-wav2text/README.md#事前準備)
-- [資料集(數據集)](https://github.com/Li732375/Finetune_Whisper_audio2zh/edit/master/finetume-wav2text/README.md#資料集(數據集))
-- [資料檔撰寫指南](https://github.com/Li732375/Finetune_Whisper_audio2zh/edit/master/finetume-wav2text/README.md#資料檔撰寫指南)
-- [輔助工具 (選讀)](https://github.com/Li732375/Finetune_Whisper_audio2zh/edit/master/finetume-wav2text/README.md#輔助工具 (選讀))
-- [如何載入資料集](https://github.com/Li732375/Finetune_Whisper_audio2zh/edit/master/finetume-wav2text/README.md#如何載入資料集)
-
-***
-
 ## 事前準備
 + #### 音訊檔
 	+ 要作為訓練或測試資料的音訊檔。有幾點要注意到：

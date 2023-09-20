@@ -1,0 +1,11 @@
+datasets
+transformers
+evaluate
+WhisperProcessor
+BasicTextNormalizer
+WhisperForConditionalGeneration
+Seq2SeqTrainingArguments
+Seq2SeqTrainer
+AutoTokenizer
+AutoModelForSeq2SeqLM
+pandas

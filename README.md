@@ -98,11 +98,11 @@ Compute Platform => CUDA 12.1
 通常位於使用者主目錄下的 .cache 文件夾中，
 
 路徑
-> ~/.cache/huggingface/hub（Linux和macOS）
+> ~/.cache/huggingface/hub（Linux 和 macOS）
 
 或
 
-> C:\Users\YourUsername\.cache\huggingface\hub（Windows）。
+> C:\Users\YourUsername\\.cache\huggingface\hub（Windows）。
 
 裡面放著曾經下載的各式模型，資料夾名稱同複製內容。
 ***

@@ -20,7 +20,7 @@ for playlist_link in playlist_links:
     playlist = Playlist(playlist_link)
 
     try:
-        orders = [0]  # 指定順位
+        orders = [0]  # 清單內影片的指定順位
           
         for order in orders:
             

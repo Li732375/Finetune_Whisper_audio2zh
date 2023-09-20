@@ -97,7 +97,7 @@ Compute Platform => CUDA 12.1
 
 通常位於使用者主目錄下的 .cache 文件夾中，
 
-具體路徑可能是
+路徑
 > ~/.cache/huggingface/hub（Linux和macOS）
 
 或

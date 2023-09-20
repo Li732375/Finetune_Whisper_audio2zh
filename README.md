@@ -90,15 +90,17 @@ Compute Platform => CUDA 12.1
 另外，若是真的跟我用相同的環境編輯器，別依賴程式裡引入套件直接下載，作者個人經驗，那個速度真~~的**堪憂**到懷疑人生。
 > 作者有留意到，下載速度似乎會**隨著完成下載量增加而降速**，原因不明
 
-那怎麼辦 ? 對，自行先透過其他管道下載，像是直接在命令提示字元輸入:
+那怎麼辦 ? 對，先透過其他管道下載，如命令提示字元:
 > transformers-cli download your_model_name
 
-其中，your_model_name 就是在頁面裡，名稱旁有個明顯的複製按鈕，按下後就得到的複製內容。至於下載的東西到哪去了呢 ? 
+其中，your_model_name 就是在頁面裡，名稱旁有個明顯的複製按鈕，按下後得到的複製內容。至於下載的東西到哪去了呢 ? 
 > 通常位於使用者主目錄下的 .cache 文件夾中，具體路徑可能是 ~/.cache/huggingface/hub（Linux和macOS）
-或
-C:\Users\YourUsername\.cache\huggingface\hub（Windows）。
 
-裡面有你曾經下載的各式模型，名稱仿複製內容。
+或
+
+> C:\Users\YourUsername\.cache\huggingface\hub（Windows）。
+
+裡面放著曾經下載的各式模型，資料夾名稱同複製內容。
 ***
 
 ## 資料下載與預處理

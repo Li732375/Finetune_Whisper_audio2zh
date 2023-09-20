@@ -96,6 +96,7 @@ Compute Platform => CUDA 12.1
 其中，your_model_name 就是在頁面裡，名稱旁有個明顯的複製按鈕，按下後得到的複製內容。至於下載的東西到哪去了呢 ? 
 
 通常位於使用者主目錄下的 .cache 文件夾中，
+
 具體路徑可能是
 > ~/.cache/huggingface/hub（Linux和macOS）
 

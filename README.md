@@ -66,7 +66,7 @@ Package => Pip
 Language => Python
 Compute Platform => CUDA 12.1
 ```
-得到的 Run this Command
+得到 Run this Command
 > pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
 
 **嘀咕: 前前後後拆裝 CUDA toolkit 和 cudnn 數次，結果最後根本完全沒安裝...**
@@ -87,14 +87,15 @@ Compute Platform => CUDA 12.1
 ## 下載模型
 模型皆取自 [Hugging Face](https://huggingface.co/)，各式各樣各種類的模型，只要你電腦 hold 的住、裝得下 (模型除非有出較小的"尺寸"，他們通常有別稱和延伸命名，否則大部分幾 **"G"** 跑不掉，這還沒有考慮進開始使用或訓練時需要的記憶體)，花點時間下載模型下來體驗也會有不錯的探索體驗。
 
-另外，若是真的跟我用相同的環境編輯器，別依賴程式裡引入套件直接下載，作者個人經驗，那個速度真~~的**堪憂**到懷疑人生。
+另外，若是真的跟我用相同的環境編輯器，別依賴程式裡引入套件直接下載，作者個人經驗，那個速度**真~~的堪憂**到懷疑人生。
 > 作者有留意到，下載速度似乎會**隨著完成下載量增加而降速**，原因不明
 
 那怎麼辦 ? 對，先透過其他管道下載，如命令提示字元:
 > transformers-cli download your_model_name
 
 其中，your_model_name 就是在頁面裡，名稱旁有個明顯的複製按鈕，按下後得到的複製內容。至於下載的東西到哪去了呢 ? 
-> 通常位於使用者主目錄下的 .cache 文件夾中，具體路徑可能是 ~/.cache/huggingface/hub（Linux和macOS）
+通常位於使用者主目錄下的 .cache 文件夾中，具體路徑可能是
+> ~/.cache/huggingface/hub（Linux和macOS）
 
 或
 

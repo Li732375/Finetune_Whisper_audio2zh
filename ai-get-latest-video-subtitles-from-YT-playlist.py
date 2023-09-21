@@ -9,7 +9,8 @@ from pydub import AudioSegment
 
 
 # 設定影片清單的連結
-playlist_links = ["your_youtube_playlist_link"]
+#your_youtube_playlist_link
+playlist_links = ["https://www.youtube.com/playlist?list=PLWbKW1MoBjKLA2PuOwHL9AgO4yA-KIgRW"]
 
 # 下載存放資料夾
 downloaded_videos_path = "downloaded_videos"
@@ -51,7 +52,7 @@ for playlist_link in playlist_links:
                 # 在日誌檔留下資料
                 with open("log.txt", "a", encoding="utf-8") as log_file:
                     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
-                    log_file.write(f"[log] 下載影片時間: {current_time}, 影片更新時間: {update_time}, 影片id: {video_id}, 路徑: {os.path.join(downloaded_videos_path, video_id)}.mp4")
+                    log_file.write(f"[log] 下載影片時間: {current_time}, 影片更新時間: {update_time}, 影片id: {video_id}, 路徑: {os.path.join(downloaded_videos_path, video_id)}.mp4\n")
                     print(f"[log] 下載影片時間: {current_time}, 影片更新時間: {update_time}, 影片id: {video_id}, 路徑: {os.path.join(downloaded_videos_path, video_id)}.mp4")
             else:
                 print("[log] 已發現過去下載的音訊檔 {video_id}.mp4...")
@@ -59,7 +60,7 @@ for playlist_link in playlist_links:
     except Exception as e:
         with open("log.txt", "a", encoding="utf-8") as log_file:
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
-            log_file.write(f"[error] 下載影片時間: {current_time}, 影片id: {video_id}, 錯誤訊息: {str(e)}")
+            log_file.write(f"[error] 下載影片時間: {current_time}, 影片id: {video_id}, 錯誤訊息: {str(e)}\n")
             print(f"[error] 下載影片時間: {current_time}, 影片id: {video_id}, 錯誤訊息: {str(e)}")
         continue
 
@@ -69,8 +70,8 @@ audio_folder = downloaded_videos_path
 
 # 建立儲存文字檔的目錄
 transcriptions_path = "transcriptions_text"
-if not os.path.exists("transcriptions_path"):
-    os.makedirs("transcriptions_path")
+if not os.path.exists(transcriptions_path):
+    os.makedirs(transcriptions_path)
     print(f"[log] 未找到存放目錄 {transcriptions_path}，將自動建立")
             
 # 從 huggingface 下載模型的 cmd 指令
@@ -117,7 +118,7 @@ for audio_file in os.listdir(audio_folder):
             # 在日誌檔留下資料
             with open("log.txt", "a", encoding="utf-8") as log_file:
                 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
-                log_file.write(f"[log] 完成作業時間: {current_time}, 影片id: {video_id} 已轉檔, 路徑: {converted_audio_path}")
+                log_file.write(f"[log] 完成作業時間: {current_time}, 影片id: {video_id} 已轉檔, 路徑: {converted_audio_path}\n")
                 print(f"[log] 完成作業時間: {current_time}, 影片id: {video_id} 已轉檔, 路徑: {converted_audio_path}")
 
             print("[log] 已轉檔:", os.path.basename(converted_audio_path),
@@ -143,7 +144,7 @@ for audio_file in os.listdir(audio_folder):
             # 在日誌檔留下資料
             with open("log.txt", "a", encoding="utf-8") as log_file:
                 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
-                log_file.write(f"[log] 完成作業時間: {current_time}, 影片id: {video_id}, 已重新取樣音訊, 存放路徑: {converted_audio_path}")
+                log_file.write(f"[log] 完成作業時間: {current_time}, 影片id: {video_id}, 已重新取樣音訊, 存放路徑: {converted_audio_path}\n")
                 print(f"[log] 完成作業時間: {current_time}, 影片id: {video_id}, 已重新取樣音訊, 存放路徑: {converted_audio_path}")
 
             print("[log] 已重新取樣音訊並儲存至:", converted_audio_path)
@@ -180,9 +181,9 @@ for audio_file in os.listdir(audio_folder):
             # 在日誌檔留下資料
             with open("log.txt", "a", encoding="utf-8") as log_file:
                 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
-                log_file.write(f"[log] 子音訊時長(秒): {chunk_long / 1000}, 重疊時長(秒): {1000 / 1000}, 取樣頻率: {target_sampling_rate}, 影片id: {video_id}")
-                log_file.write(f"[log] 完成作業時間: {current_time}, 影片id: {video_id}, 已切出 {count} 個子音訊檔, 路徑: {output_path}")
-                print(f"[log] 子音訊時長: {chunk_long / 1000}, 重疊時長: {1000 / 1000}, 取樣頻率: {target_sampling_rate}, 影片id: {video_id}")
+                log_file.write(f"[log] 子音訊時長(秒): {chunk_long / 1000}, 重疊時長(秒): {overlap_size / 1000}, 取樣頻率: {target_sampling_rate}, 影片id: {video_id}\n")
+                log_file.write(f"[log] 完成作業時間: {current_time}, 影片id: {video_id}, 已切出 {count} 個子音訊檔, 路徑: {output_path}\n")
+                print(f"[log] 子音訊時長: {chunk_long / 1000}, 重疊時長: {overlap_size / 1000}, 取樣頻率: {target_sampling_rate}, 影片id: {video_id}")
                 print(f"[log] 完成作業時間: {current_time}, 影片id: {video_id}, 已切出 {count} 個子音訊檔, 路徑: {output_path}")
 
             print("[log] 完成音訊檔分段作業，共切出 ", count, " 個子音訊檔")
@@ -263,7 +264,6 @@ for audio_file in os.listdir(audio_folder):
                             
     os.rmdir(os.path.join(audio_folder, video_id))
                     
-
     # 在日誌檔留下資料
     with open("log.txt", "a", encoding="utf-8") as log_file:
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]

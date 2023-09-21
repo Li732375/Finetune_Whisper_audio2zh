@@ -26,8 +26,8 @@ CUDA Version: 12.2
 ## 前置準備
 
 * #### 套件安裝
-對於初來乍到的讀者，為了維持你想實作的**耐心籌碼**，將相關的套件先行安裝好，可以減少很多不必要的衍伸報錯，造成籌碼提前耗損。
-> 出現難以解開的問題時，也可以早點放棄 ? (誤
+  對於初來乍到的讀者，為了維持你想實作的**耐心籌碼**，將相關的套件先行安裝好，可以減少很多不必要的衍伸報錯，造成籌碼提前耗損。
+  > 出現難以解開的問題時，也可以早點放棄 ? (誤
 
   使用 pip 安裝這些套件，或者直接將 requirements.txt 文件打開直接逐一套件複製出來，再自行安裝也行，也可以照如下步驟一次安裝：
   1. 打開命令提示字元。
@@ -48,8 +48,7 @@ CUDA Version: 12.2
 
 ***
 * #### CUDA
-依據現在當下的時期，尚未有該硬體配置的相應 cuda 穩定的版本。作者當時臆測暨實際測試:
-
+  依據現在當下的時期，尚未有該硬體配置的相應 cuda 穩定的版本。作者當時臆測暨實際測試:
   + 是否有向前版本相容 ? => 不
   + 是否是下載的 Nvidia CUDA toolkit 的哪個元件漏裝 ? => 不
   + 是否是下載的 Nvidia CUDA toolkit 的元件全裝 ? => 不
@@ -59,13 +58,14 @@ CUDA Version: 12.2
   ... ...等等諸多問題
 
   最後又 ~~ 回再度到 [PyTorch 官網](https://pytorch.org/get-started/locally/#start-locally)，如下點選:
-```
-PyTorch Build => Preview (Nightly)
-Your OS => Windows
-Package => Pip
-Language => Python
-Compute Platform => CUDA 12.1
-```
+  ```
+  PyTorch Build => Preview (Nightly)
+  Your OS => Windows
+  Package => Pip
+  Language => Python
+  Compute Platform => CUDA 12.1
+  ```
+
   得到 Run this Command
   > pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
 
@@ -73,7 +73,7 @@ Compute Platform => CUDA 12.1
 
 ***
 * #### FFmpeg
-一個免費的開源軟體庫，處理和操作音訊和影片。常被廣泛用於各種目的，包括轉碼、基本編輯以及過濾和 Stream 傳輸等任務。
+  一個免費的開源軟體庫，處理和操作音訊和影片。常被廣泛用於各種目的，包括轉碼、基本編輯以及過濾和 Stream 傳輸等任務。
 
   1. 官網下載: [Download FFmpeg](https://ffmpeg.org/download.html "FFmpeg")
   2. 解壓縮檔案，放置的位置不能太隨便，要穩定且不會被"莫名其妙搬走"的
@@ -81,7 +81,7 @@ Compute Platform => CUDA 12.1
   4. 測試，在命令提示字元輸入
   > ffmpeg
 
-  會洋洋灑灑的出現說明，反正沒報錯就行
+  會洋洋灑灑的出現 ffmpeg 說明，反正沒報錯就行
 ***
 
 ## 下載模型
@@ -103,18 +103,18 @@ Compute Platform => CUDA 12.1
 或
 
 > C:\Users\YourUsername\\.cache\huggingface\hub（Windows）。
-
+  
 裡面放著曾經下載的各式模型，資料夾名稱同複製內容。
 ***
 
 ## 資料下載與預處理
 * #### 資料
-微調 (Finetnue) 選用的訓練資料，取 Youtube CC 授權的影片為素材。設定條件篩選後，滑呀滑呀滑～，意外發現[千千進食中](https://www.youtube.com/@Chienseating "千千進食中")中的頻道有符合的影片，於是開始設計僅下載清單內首部影片音訊部分的程式。
+  微調 (Finetnue) 選用的訓練資料，取 Youtube CC 授權的影片為素材。設定條件篩選後，滑呀滑呀滑～，意外發現[千千進食中](https://www.youtube.com/@Chienseating "千千進食中")中的頻道有符合的影片，於是開始設計僅下載清單內首部影片音訊部分的程式。
 
 ***
 
 * #### 下載
-過程大鋼:
+  過程大鋼:
   1. 取得影片資訊。
   2. 檢查是否曾下載過。
   3. 若無，則下載成 "mp4" 格式。反之則不做事。
@@ -125,7 +125,7 @@ Compute Platform => CUDA 12.1
 ***
 
 * #### 預處理
-接著，得到 **"原始素材"**後，要進行以下流程:
+  接著，得到 **"原始素材"**後，要進行以下流程:
   1. 載入語音辨識模型
   2. 透過 ffmpeg 轉檔成 "wav"
   3. 透過 ffmpeg 重新取樣
@@ -136,7 +136,7 @@ Compute Platform => CUDA 12.1
   也有寫入紀錄檔 log.txt 的功能
 ***
 
-> 有關進一步的資料處理概念，可以參考本專案資料夾 "finetume-wav2text" 下的  "[README.md](https://github.com/Li732375/Finetune_Whisper_audio2zh/tree/master/finetume-wav2text#%E5%A6%82%E4%BD%95%E7%94%A2%E7%94%9F%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9F%B3%E8%A8%8A%E8%B3%87%E6%96%99%E9%9B%86 "如何產生自己的音訊資料集")"
+> 有關進一步的資料預處理過程，可以參考本專案資料夾 "finetume-wav2text" 下的  "[README.md](https://github.com/Li732375/Finetune_Whisper_audio2zh/tree/master/finetume-wav2text#%E5%A6%82%E4%BD%95%E7%94%A2%E7%94%9F%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9F%B3%E8%A8%8A%E8%B3%87%E6%96%99%E9%9B%86 "如何產生自己的音訊資料集")"
 
 ***
 

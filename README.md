@@ -34,6 +34,7 @@ CUDA Version: 12.2
   
   2. 使用 cd 命令來切換目錄，到存放 requirements.txt 文件的目錄。
   3. 在目錄中執行以下命令安裝套件：
+  
   ```
   pip install -r requirements.txt
   ```
@@ -42,6 +43,7 @@ CUDA Version: 12.2
   
   2. 複製 requirements.txt 文件的路徑。
   3. 在目錄中執行以下命令安裝套件：
+  
   ```
   pip install -r 文件的路徑
   ```
@@ -79,8 +81,11 @@ CUDA Version: 12.2
   2. 解壓縮檔案，放置的位置不能太隨便，要穩定且不會被"莫名其妙搬走"的
   3. **設定環境變數**
   4. 測試，在命令提示字元輸入
-  > ffmpeg
-
+  
+  ```
+  ffmpeg
+  ```
+  
   會洋洋灑灑的出現 ffmpeg 說明，反正沒報錯就行
 ***
 
@@ -91,20 +96,30 @@ CUDA Version: 12.2
 > 作者有留意到，下載速度似乎會**隨著完成下載量增加而降速**，原因不明
 
 那怎麼辦 ? 對，先透過其他管道下載，如命令提示字元:
-> transformers-cli download your_model_name
+```
+transformers-cli download your_model_name
+```
 
-其中，your_model_name 就是在頁面裡，名稱旁有個明顯的複製按鈕，按下後得到的複製內容 (格式大概長 "ADT109119/whisper-small-zh-TW")。至於下載的東西到哪去了呢 ? 
+其中，your_model_name 就是在頁面裡，名稱旁有個明顯的複製按鈕，按下後得到的複製內容 (格式大概像 "ADT109119/whisper-small-zh-TW")。
+
+至於下載的東西到哪去了呢 ? 
 
 通常位於使用者主目錄下的 .cache 文件夾中，
 
 路徑
-> ~/.cache/huggingface/hub（Linux 和 macOS）
+Linux 和 macOS
+```
+~/.cache/huggingface/hub
+```
 
 或
 
-> C:\Users\YourUsername\\.cache\huggingface\hub（Windows）。
-  
-裡面放著曾經下載的各式模型，資料夾名稱同複製內容。
+Windows
+```
+C:\Users\YourUsername\\.cache\huggingface\hub
+```
+
+放置曾經採用預設路徑下載的各式模型，資料夾名稱同複製內容。
 ***
 
 ## 資料下載與預處理

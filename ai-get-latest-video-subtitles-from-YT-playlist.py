@@ -243,7 +243,7 @@ for audio_file in os.listdir(audio_folder):
                                         + "_" + text[0] + '\n')  # 加上換行符號
                         """
                         text_file.write(os.path.basename(sub_audio)
-                                        + "_" + text[0] + '\n')  # 加上換行符號
+                                        + ", " + text[0] + '\n')  # 加上換行符號
                     
                     # 將歷次辨識結果加入結果列表
                     transcriptions[index] = text[0]

@@ -125,8 +125,9 @@ C:\Users\YourUsername\\.cache\huggingface\hub
 ## 資料下載與預處理
 * #### 資料
   微調 (Finetnue) 選用的訓練資料，取 [Youtube CC 授權](https://www.youtube.com/t/creative_commons "
-創用 CC 姓名標示授權 (允許再利用)")的影片為素材。設定條件篩選後，滑呀滑呀滑～，意外在[千千進食中](https://www.youtube.com/@Chienseating "千千進食中")中發現頻道有 CC 授權的影片，於是開始設計僅下載清單內首部影片音訊部分的程式。
+創用 CC 姓名標示授權 (允許再利用)")的影片為素材。設定條件篩選後，滑呀滑呀滑～，意外在[千千進食中](https://www.youtube.com/@Chienseating "千千進食中")中發現頻道有 CC 授權的影片，就是它啦！
 
+  > 小提醒，初次嘗試的新手，選用素材時，最好是尋找口齒清晰、有字幕提供下載，進一步挑戰的，可以考慮特定主題，會有較多專業術語，同時也會面臨多語言術語的挑戰。
 ***
 
 * #### 下載

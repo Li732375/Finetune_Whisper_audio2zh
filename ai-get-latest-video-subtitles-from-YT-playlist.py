@@ -9,8 +9,7 @@ from pydub import AudioSegment
 
 
 # 設定影片清單的連結
-#your_youtube_playlist_link
-playlist_links = ["https://www.youtube.com/playlist?list=PLWbKW1MoBjKLA2PuOwHL9AgO4yA-KIgRW"]
+playlist_links = ["your_youtube_playlist_link"]
 
 # 下載存放資料夾
 downloaded_videos_path = "downloaded_videos"

@@ -166,6 +166,14 @@ C:\Users\YourUsername\\.cache\huggingface\hub
 
 有要進一步理解相關延伸內容 (像是對於音訊相關、其他音訊模型微調和其他功能的模型)，也可以前往探索 ！！
 ***
+嘀咕: 若硬體限制略低的 (就是跑下去不會當機，簡單使用瀏覽器跟文書不會卡的)，覺得預設配置還會跑上千百年的，改一下配置
+
+> training_args = Seq2SeqTrainingArguments 這裡，per_device_train_batch_size = 8、gradient_accumulation_steps = 2
+> 別懷疑，先降門檻再說...不然就會像資料夾 "finetume-wav2text" 下的 log.txt 的紀錄一樣慘，哭 ~ 啊 ！
+
+> 否則預設就直接 per_device_train_batch_size = 4、gradient_accumulation_steps = 4，別逞強 !
+
+***
 
 參考連結
 + 英，[Create an audio dataset](https://huggingface.co/docs/datasets/audio_dataset)

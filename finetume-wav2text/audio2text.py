@@ -213,8 +213,8 @@ from transformers import Seq2SeqTrainingArguments
 
 training_args = Seq2SeqTrainingArguments(
     output_dir="finetune-whisper-small",  # 保存模型權重的本地目錄，它也會是Hugging Face Hub上的模型存儲庫名稱。
-    per_device_train_batch_size=16,
-    gradient_accumulation_steps=1,  # increase by 2x for every 2x decrease in batch size
+    per_device_train_batch_size=8,  # default 16
+    gradient_accumulation_steps=2,  # default 1，increase by 2x for every 2x decrease in batch size
     learning_rate=1e-5,
     lr_scheduler_type="constant_with_warmup",
     warmup_steps=50,

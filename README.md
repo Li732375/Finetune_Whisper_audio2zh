@@ -158,7 +158,9 @@ C:\Users\YourUsername\\.cache\huggingface\hub
 ***
 
 ## 結語
-接下來**訓練模型**的流程都參照 [Hugging Face](https://huggingface.co/ "Hugging Face") 官網的課程教學，網路上也有諸多相同程式碼但其他語言的版本，讀者可以再自行參照修改。
+接下來**訓練模型**的流程都參照 [Hugging Face](https://huggingface.co/ "Hugging Face") 官網的課程教學，網路上也有諸多相同程式碼但其他語言(這裡指如印地安語等人類語言，非程式語言)的版本，讀者可以再自行參照修改。
+
+> 對於嘗試專案的新手**幾乎沒有太多為了配合資料主題而需要異動的延伸需求**，排除硬體限制，其實相當推薦!!
 
 課程連結: [How to fine-tune an ASR system with the Trainer API](https://huggingface.co/learn/audio-course/chapter5/fine-tuning "How to fine-tune an ASR system with the Trainer API")
 

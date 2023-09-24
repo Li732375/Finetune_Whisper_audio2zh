@@ -34,6 +34,9 @@ def process_data(data, other):
     # 取得左半段
     left_half = parts[0]
 
+    if "file_name" == left_half:
+        return ""
+
     # 以底線分隔左半段，至少會有三段
     segments = left_half.split('_')
     if len(segments) < 3:
@@ -45,6 +48,7 @@ def process_data(data, other):
 
     # 如果有第四段，則尋找對應的音訊檔
     if len(segments) == 4:
+        #print(audio_name) 
         audio_file = os.path.join(output_folder_path, f"{audio_name}.wav")
 
         if os.path.exists(audio_file):
@@ -58,8 +62,13 @@ def process_data(data, other):
                 shutil.copy(audio_file, new_audio_path)
                 print(f"已複製並重新命名：{new_audio_path}")
 
-        #print(new_audio_name)        
-        return new_audio_name
+            #print(new_audio_name)        
+            return new_audio_name
+
+        else:
+            other.append(f"{audio_file} :檔案未找到")
+            return ""
+        
     else:
         #print(audio_name)
         return audio_name
@@ -77,12 +86,13 @@ other = []  # 紀錄有問題的資料
 # 逐筆處理資料
 for line in data_lines:
     previous = process_data(line.strip(), other)
-    duplicate.append(previous)
+
+    if len(previous) > 0:
+        duplicate.append(previous)
 
 # 確認是否有重複內容
 if duplicate:
-    print(f"\n發現資料檔內有重複資料路徑！")
-    
+    print()
     # 統計數量
     element_count = Counter(duplicate)
     
@@ -91,5 +101,12 @@ if duplicate:
             print(f"名稱 {element} 重複出現 {count} 次")
 else:
     print("\n未發現重複音訊檔檔名的資料")
+
+# 確認是否有異常資料
+if other:
+    print(f"\n資料異常:")
+
+    for num in range(len(other)):
+        print(f"{num + 1} >>> {other[num]}")
     
-print("完成音訊檔資料更新任務。")
+print("\n完成音訊檔資料更新任務。")

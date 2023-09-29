@@ -26,7 +26,7 @@ with open("log.txt", "a", encoding="utf-8") as log_file:
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
     log_file.write(f"[log] 資料載入起始時間: {current_time}\n")
     print(f"[log] 資料載入起始時間: {current_time}")
-    
+   
 # 載入資料集
 dataset = load_dataset("audiofolder", data_dir="audio_dataset",
                        drop_labels=True)
@@ -260,7 +260,7 @@ with open("log.txt", "a", encoding="utf-8") as log_file:
     current_time = start_train_t.strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
     log_file.write(f"[log] 訓練開始時間: {current_time}\n")
     print(f"[log] 訓練開始時間: {current_time}")
-    
+   
 # launch training
 trainer.train()
 
@@ -274,12 +274,10 @@ print("*******************************************")
 
 
 with open("log.txt", "a", encoding="utf-8") as log_file:
-    start_datetime = datetime.strptime(start_train_t, "%Y-%m-%d %H:%M:%S.%f")
-    end_datetime = datetime.strptime(end_train_t, "%Y-%m-%d %H:%M:%S.%f")
-    different_t = end_datetime - start_datetime
+    different_t = end_train_t - start_train_t
     
     # 將時間差轉換為秒數
-    time_difference_seconds = time_difference.total_seconds()
+    time_difference_seconds = different_t.total_seconds()
 
     # 格式化時間差為指定格式
     time_difference_str = f"{int(time_difference_seconds // 3600):02}:{int((time_difference_seconds % 3600) // 60):02}:{time_difference_seconds % 60:.2f}"

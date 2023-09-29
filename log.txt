@@ -1,7 +1,0 @@
-[log] 下載影片時間: 2023-09-21 19:11:20.87, 影片更新時間: 2023-09-01 00:00:00, 影片id: HvugeIKJ9ok, 路徑: downloaded_videos\HvugeIKJ9ok.mp4
-[log] 完成作業時間: 2023-09-21 19:11:28.31, 影片id: HvugeIKJ9ok 已轉檔, 路徑: downloaded_videos\HvugeIKJ9ok.wav
-[log] 完成作業時間: 2023-09-21 19:11:29.53, 影片id: HvugeIKJ9ok, 已重新取樣音訊, 存放路徑: downloaded_videos\HvugeIKJ9ok.wav
-[log] 子音訊時長(秒): 10.0, 重疊時長(秒): 2.0, 取樣頻率: 16000, 影片id: HvugeIKJ9ok
-[log] 完成作業時間: 2023-09-21 19:11:31.61, 影片id: HvugeIKJ9ok, 已切出 201 個子音訊檔, 路徑: downloaded_videos/HvugeIKJ9ok/HvugeIKJ9ok_1600_1603.wav
-[log] 完成作業時間: 2023-09-21 19:13:52.70, 影片id: HvugeIKJ9ok, 已存進文字檔路徑: transcriptions_text\HvugeIKJ9ok_list.txt
-[log] 完成作業時間: 2023-09-21 19:13:52.71, ai-get-latest-video-subtitles-from-YT-playlist.py 完成所有步驟, 檔案路徑: C:\Users\user\Desktop\python作品\Finetune_Whisper_audio2zh\get_audios\ai-get-latest-video-subtitles-from-YT-playlist.py
